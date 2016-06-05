@@ -4,7 +4,7 @@ SwiftDSA is a collection of Data Structure and Algorithms in one Xcode project. 
 
 ## Code Structure
 
-Every Data Structure implemented inside SwiftDSA should be placed inside the corresponding directory (i.e. Queue & Linked Lists are in Data Structure directory. Dijkestra Short Path is in Algorithms directory). Every Data Structure and/or Algorithm implemented should have corresponding Unit Tests along with a Visualization example on the screen (i.e. a View Controller that illustrates the concept).
+Every Data Structure implemented inside SwiftDSA should be placed inside the corresponding directory (i.e. Queue & Linked Lists are in Data Structure directory. Dijkstra Shortest Path is in Algorithms directory). Every Data Structure and/or Algorithm implemented should have corresponding Unit Tests along with a Visualization example on the screen (i.e. a View Controller that illustrates the concept).
 
 ## Protocol Oriented Programming
 
