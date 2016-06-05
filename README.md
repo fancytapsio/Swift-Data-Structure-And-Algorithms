@@ -6,9 +6,9 @@ SwiftDSA is a collection of Data Structure and Algorithms in one Xcode project. 
 
 Every Data Structure implemented inside SwiftDSA should be placed inside the corresponding directory (i.e. Queue & Linked Lists are in Data Structure directory. Dijkstra Shortest Path is in Algorithms directory). Every Data Structure and/or Algorithm implemented should have corresponding Unit Tests along with a Visualization example on the screen (i.e. a View Controller that illustrates the concept).
 
-## Protocol Oriented Programming
+## Protocol-Oriented Programming
 
-SwiftDSA code follows the POP concepts (Protocol Oriented Programming).
+SwiftDSA code follows the POP concepts (Protocol-Oriented Programming). Please refer to the Protocol-Oriented Programming video on WWDC 2015 session videos https://developer.apple.com/videos/wwdc2015/
 
 ## Usage
 
@@ -16,7 +16,7 @@ SwiftDSA should be used as a simple reference to Data Structures and Algorithms
 
 ## Prerequisites
 
-Highly recommend reading Advanced Swift and Functional Swift for understanding concepts found in SwiftDSA such as POP (Protocol Oriented Programming). The books can be found here https://www.objc.io/
+Highly recommend reading Advanced Swift and Functional Swift for understanding concepts found in SwiftDSA such as POP (Protocol-Oriented Programming). The books can be found here https://www.objc.io/
 
 ## License
 
