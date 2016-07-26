@@ -62,7 +62,7 @@ class QueueTests: XCTestCase {
         queue.enqueue(2)
         queue.enqueue(3)
         
-        queue.replaceRange(0..<3, with: [4,5,6])
+        queue.replaceSubrange(0..<3, with: [4,5,6])
         
         XCTAssertEqual(queue.count, 3, "queue count mismatch")
         XCTAssertEqual(queue[0], 4, "subscript mismatch at index 0")

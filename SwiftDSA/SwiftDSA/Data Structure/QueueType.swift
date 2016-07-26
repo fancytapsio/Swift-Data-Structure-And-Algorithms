@@ -14,7 +14,7 @@ protocol QueueType {
     associatedtype Element
     
     /// adds new element to the queue
-    mutating func enqueue(newElement: Element)
+    mutating func enqueue(_ newElement: Element)
     
     /// Returns an element in turn removing it from the queue.
     /// Returns nil if the queue is empty

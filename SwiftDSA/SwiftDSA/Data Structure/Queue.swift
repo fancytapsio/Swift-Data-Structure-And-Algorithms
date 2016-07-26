@@ -31,7 +31,7 @@ struct Queue<Element>: QueueType {
     /**
      Appends an element to the right stack in O(1)
      */
-    mutating func enqueue(element: Element) {
+    mutating func enqueue(_ element: Element) {
     
         right.append(element)
     }
@@ -45,8 +45,8 @@ struct Queue<Element>: QueueType {
         
         if left.isEmpty {
         
-            left = right.reverse()
-            right.removeAll(keepCapacity: true)
+            left = right.reversed()
+            right.removeAll(keepingCapacity: true)
         }
         
         return left.removeLast()
@@ -59,7 +59,7 @@ struct Queue<Element>: QueueType {
  CollectionType for free.
  */
 
-extension Queue: CollectionType {
+extension Queue: Collection {
 
     var startIndex: Int { return 0 }
     var endIndex: Int { return left.count + right.count }
@@ -73,7 +73,7 @@ extension Queue: CollectionType {
              so the index should start counting from back of the
              left array in this case.
              */
-            return left[left.count - idx.successor()]
+            return left[left.count - (idx + 1)]
         
         } else {
             /**
@@ -82,6 +82,16 @@ extension Queue: CollectionType {
              when counting.
              */
             return right[idx - left.count]
+        }
+    }
+    
+    func index(after i: Int) -> Int {
+        precondition((0..<endIndex).contains(i), "index provided is bigger than the total number of elements in the Queue. Index provided is out of bounds")
+        
+        if i == endIndex {
+            return startIndex
+        } else {
+            return i + 1
         }
     }
 }
@@ -94,19 +104,19 @@ extension Queue: CollectionType {
 extension Queue: ArrayLiteralConvertible {
  
     init(arrayLiteral elements: Element...) {
-        self.left = elements.reverse()
+        self.left = elements.reversed()
         self.right = []
     }
 }
 
-extension Queue: RangeReplaceableCollectionType {
+extension Queue: RangeReplaceableCollection {
 
-    mutating func reserveCapacity(n: Int) { return }
+    mutating func reserveCapacity(_ n: Int) { return }
     
-    mutating func replaceRange<C : CollectionType where C.Generator.Element == Element>(subRange: Range<Int>, with newElements: C) {
+    mutating func replaceSubrange<C : Collection where C.Iterator.Element == Element>(_ subRange: Range<Int>, with newElements: C) {
         
-        right = left.reverse() + right
-        left.removeAll(keepCapacity: true)
-        right.replaceRange(subRange, with: newElements)
+        right = left.reversed() + right
+        left.removeAll(keepingCapacity: true)
+        right.replaceSubrange(subRange, with: newElements)
     }
 }
