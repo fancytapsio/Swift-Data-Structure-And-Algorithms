@@ -91,6 +91,7 @@ extension Queue: Collection {
         if i == endIndex {
             return startIndex
         } else {
+            // lopping back to first index
             return i + 1
         }
     }
